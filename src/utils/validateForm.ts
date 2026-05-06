@@ -30,11 +30,14 @@ export const validateForm = ({
       const key = getFieldKey(field.label);
       const value = formData[key];
 
+      const isRequired = field.required !== false;
+
       // -----------------------------
       // REQUIRED VALIDATION
       // -----------------------------
       if (
         field.type !== "file" &&
+        isRequired &&
         (!value || value === "" || value === "null")
       ) {
         errors[key] = `${field.label} is required`;

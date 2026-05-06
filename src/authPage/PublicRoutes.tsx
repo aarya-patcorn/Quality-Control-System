@@ -1,20 +1,25 @@
-import React from "react";
 import { Navigate } from "react-router-dom";
+import type { ReactNode } from "react";
 
-function PublicRoutes({ children }) {
-    let user = null;
+type Props = {
+  children: ReactNode;
+};
 
-    try {
-        user = JSON.parse(localStorage.getItem("user"));
-    } catch {
-        user = null; 
-    }
+function PublicRoutes({ children }: Props) {
+  let user = null;
 
-    if (user) {
-        return <Navigate to="/" replace />;
-    }
+  try {
+    const storedUser = localStorage.getItem("user");
+    user = storedUser ? JSON.parse(storedUser) : null;
+  } catch {
+    user = null;
+  }
 
-    return children;
+  if (user) {
+    return <Navigate to="/" replace />;
+  }
+
+  return children;
 }
 
 export default PublicRoutes;

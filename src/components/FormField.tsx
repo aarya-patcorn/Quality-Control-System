@@ -81,6 +81,7 @@ export default function FormField({
           <Input
             type={field.type}
             value={value || ""}
+            disabled={field.disabled}
             onChange={(e) => onChange(fieldKey, e.target.value)}
             placeholder={`Enter ${field.label.toLowerCase()}`}
             className={`h-12 rounded-2xl px-4 text-base ${

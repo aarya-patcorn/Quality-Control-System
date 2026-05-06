@@ -1,8 +1,12 @@
-import React from "react";
 import { Navigate } from "react-router-dom";
+import type { ReactNode } from "react";
 
-function PrivateRoutes({ children }) {
-  const user = JSON.parse(localStorage.getItem("user"));
+type Props = {
+  children: ReactNode;
+};
+
+function PrivateRoutes({ children }: Props) {
+  const user = JSON.parse(localStorage.getItem("user") || "null");
 
   if (!user) {
     return <Navigate to="/login" replace />;

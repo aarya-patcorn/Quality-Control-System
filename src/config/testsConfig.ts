@@ -8,10 +8,11 @@ export const TESTS = {
             {
                 title: "Dispatch & Sample",
                 fields: [
-                    { label: "Cement Dispatch Date", name: "cement_dispatch_date", type: "date" },
+                    { label: "Cement Unloading Date", name: "cement_unloading_date", type: "date" },
                     { label: "Supplier Name", name: "supplier_name", type: "text" },
+                    { label: "Bill Invoice No.", name: "bill_invoice_no", type: "text" },
+                    { label: "Cement Type", name: "cement_type", type: "text" },
                     { label: "Testing Date", name: "testing_date", type: "date" },
-                    { label: "Sample No", name: "sample_no", type: "text" },
                 ],
             },
             {
@@ -26,8 +27,8 @@ export const TESTS = {
             {
                 title: "Review",
                 fields: [
-                    { label: "Test Done By", name: "test_done_by", type: "text" },
-                    { label: "Remarks (if any)", name: "remarks_if_any", type: "textarea", full: true },
+                    { label: "Test Done By", name: "test_done_by", type: "text", disabled: true },
+                    { label: "Remarks (if any)", name: "remarks_if_any", type: "textarea", full: true, required: false },
                     { label: "Status", name: "status", type: "status", full: true },
                 ],
             }
@@ -41,8 +42,10 @@ export const TESTS = {
             {
                 title: "Sample Details",
                 fields: [
-                    { label: "Sand Dispatch Date", name: "sand_dispatch_date", type: "date" },
+                    { label: "Sand Unloading Date", name: "sand_unloading_date", type: "date" },
                     { label: "Supplier Name", name: "supplier_name", type: "text" },
+                    { label: "Bill/Invoice No.", name: "bill_invoice_no", type: "text" },
+                    { label: "Sand Type", name: "sand_type", type: "text" },
                     { label: "Testing Date", name: "testing_date", type: "date" },
                     { label: "Sample No", name: "sample_no", type: "text" },
                 ],
@@ -61,10 +64,9 @@ export const TESTS = {
             {
                 title: "Review",
                 fields: [
-                    { label: "Test Done By", name: "test_done_by", type: "text" },
-                    { label: "Image of Result", name: "image_of_result", type: "file" },
+                    { label: "Test Done By", name: "test_done_by", type: "text", disabled: true },
                     { label: "Remarks (if any)", name: "remarks_if_any", type: "textarea", full: true },
-                    { label: "Status", name: "status", type: "status", full: true },
+                    { label: "Status", name: "status", type: "status", full: true, required: false },
                 ],
             },
         ]
@@ -96,9 +98,8 @@ export const TESTS = {
             {
                 title: "Review",
                 fields: [
-                    { label: "Test Done By", name: "test_done_by", type: "text" },
-                    { label: "Upload File", name: "upload_file", type: "file" },
-                    { label: "Remarks", name: "remarks", type: "textarea", full: true },
+                    { label: "Test Done By", name: "test_done_by", type: "text", disabled: true },
+                    { label: "Remarks", name: "remarks", type: "textarea", full: true, required: false },
                     { label: "Status", name: "status", type: "status", full: true },
                 ],
             },
@@ -122,15 +123,15 @@ export const TESTS = {
                 fields: [
                     { label: "Visual Analysis", name: "visual_analysis", type: "textarea", full: true },
                     { label: "Visual Analysis File", name: "visual_analysis_file", type: "file" },
-                    { label: "Lump Formation / Stickiness", name: "lump_formation_stickiness", type: "text" },
-                    { label: "Lump Formation File", name: "lump_formation_file", type: "file", full: true },
+                    { label: "Luss Formation / Stickiness", name: "luss_formation_stickiness", type: "text" },
+                    { label: "Luss Formation File", name: "luss_formation_file", type: "file", full: true },
                 ],
             },
             {
                 title: "Review",
                 fields: [
-                    { label: "Test Done By", name: "test_done_by", type: "text" },
-                    { label: "Remarks", name: "remarks", type: "textarea", full: true },
+                    { label: "Test Done By", name: "test_done_by", type: "text", disabled: true },
+                    { label: "Remarks", name: "remarks", type: "textarea", full: true, required: false },
                     { label: "Status", name: "status", type: "status", full: true },
                 ],
             },
@@ -144,7 +145,7 @@ export const TESTS = {
             {
                 title: "Batch Info",
                 fields: [
-                    { label: "Manufacturing Date", name: "manufacturing_date", type: "date" },
+                    { label: "Manufacturing Date", name: "manufacturing_date", type: "date", disabled: true },
                     { label: "Batch No", name: "batch_no", type: "text" },
                     { label: "Adhesive Type", name: "adhesive_type", type: "text" },
                 ],
@@ -162,7 +163,7 @@ export const TESTS = {
                 title: "Review",
                 fields: [
                     { label: "Test Done By", name: "test_done_by", type: "text" },
-                    { label: "Remarks", name: "remarks", type: "textarea", full: true },
+                    { label: "Remarks", name: "remarks", type: "textarea", full: true, required: false },
                     { label: "Status", name: "status", type: "status", full: true },
                 ],
             },
@@ -202,5 +203,4 @@ export const TESTS = {
             },
         ],
     },
-};
-
+}

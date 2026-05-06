@@ -9,6 +9,8 @@ import logo from "../assets/logo.png"
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
+const API_URL = "https://script.google.com/macros/s/AKfycbyHREcyipyXfTISgUVXvRhG_eqpRY_YUrkqVTN7PfuaqHwZjIvL-51O2adxRoRBsDq1/exec"
+
 export default function Login() {
     const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -29,7 +31,7 @@ export default function Login() {
         setLoading(true);
 
         try {
-            const res = await fetch("https://script.google.com/macros/s/AKfycbwCFxRg8ILnxMyU8biGU8Ar_1ojgJ5aFJ5rjR7xp8W5h42BW1Ma14yLswG5FTkRAvk-8Q/exec", {
+            const res = await fetch(API_URL, {
                 method: "POST",
                 headers: {
                     "Content-Type": "text/plain;charset=utf-8",

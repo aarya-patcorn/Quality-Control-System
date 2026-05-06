@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./Header";
 import FormField from "./FormField";
 import { Button } from "./ui/button";
@@ -14,7 +14,7 @@ import toast from "react-hot-toast";
 import { validateForm } from "../utils/validateForm";
 import { preparePayload } from "../utils/fileUtils";
 
-const API_URL = "https://script.google.com/macros/s/AKfycbwCFxRg8ILnxMyU8biGU8Ar_1ojgJ5aFJ5rjR7xp8W5h42BW1Ma14yLswG5FTkRAvk-8Q/exec"
+const API_URL = "https://script.google.com/macros/s/AKfycbyHREcyipyXfTISgUVXvRhG_eqpRY_YUrkqVTN7PfuaqHwZjIvL-51O2adxRoRBsDq1/exec"
 
 export default function TestForm() {
   const [testType, setTestType] = useState("");
@@ -42,8 +42,14 @@ export default function TestForm() {
     }));
   };
 
-  // console.log("VALIDATION ERRORS:", errors);
-  // console.log("FORM DATA:", formData);
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem("user") || "{}");
+
+    setFormData((prev: any) => ({
+      ...prev,
+      test_done_by: userData?.name || "",
+    }));
+  }, []);
 
   const handleSubmit = async () => {
     try {
@@ -73,6 +79,8 @@ export default function TestForm() {
         testType,
         data: cleanData,
       };
+
+      console.log(payload)
 
       const res = await fetch(API_URL, {
         method: "POST",

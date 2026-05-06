@@ -11,12 +11,8 @@ export const preparePayload = async (formData: any) => {
 
     const fileMap = [
         "image_of_result_workability",
-        "image_of_result",
-        "upload_file",
-        "lump_formation_file",
+        "luss_formation_file",
         "visual_analysis_file",
-        "flow_test_file",
-        "initial_setting_file",
     ];
 
     for (const key of fileMap) {
