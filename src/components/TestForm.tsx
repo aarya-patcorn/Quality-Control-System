@@ -23,7 +23,7 @@ export default function TestForm() {
   const [errors, setErrors] = useState<any>({});
   const [loading, setLoading] = useState(false);
 
-  const selectedTest = TESTS[testType];
+  const selectedTest = TESTS[testType as keyof typeof TESTS];
 
   const handleChange = (key: string, value: any) => {
     setFormData((prev: any) => ({ ...prev, [key]: value }));

@@ -1,4 +1,3 @@
-import React from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Form from './components/TestForm'
 import Login from './authPage/Login'
@@ -30,6 +29,7 @@ function App() {
 
           success: {
             iconTheme: {
+              primary: "#10b981",
               secondary: "#ecfdf5",
             },
           },
