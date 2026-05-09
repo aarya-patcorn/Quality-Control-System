@@ -102,7 +102,7 @@ export default function TestForm() {
         setErrors({});
         setTimeout(() => {
           window.location.reload();
-        }, 1500);
+        }, 1000);
       } else {
         throw new Error(result.error || "Something went wrong");
       }
