@@ -47,13 +47,21 @@ export default function FormField({
       {field.type === "status" && (
         <>
           <Select onValueChange={(val) => onChange(fieldKey, val)}>
-            <SelectTrigger className="h-12 w-full rounded-2xl border-slate-300 bg-white text-base">
+            <SelectTrigger className="h-12 py-6 w-full rounded-2xl border-slate-300 bg-white text-base">
               <SelectValue placeholder="Select status" />
             </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="Pass">Pass</SelectItem>
-              <SelectItem value="Doubtful">Doubtful</SelectItem>
-              <SelectItem value="Fail">Fail</SelectItem>
+            <SelectContent className="rounded-2xl p-2">
+              <SelectItem className="py-2" value="Pass">
+                Pass
+              </SelectItem>
+
+              <SelectItem className="py-2" value="Doubtful">
+                Doubtful
+              </SelectItem>
+
+              <SelectItem className="py-2" value="Fail">
+                Fail
+              </SelectItem>
             </SelectContent>
           </Select>
           {error && <p className="text-xs text-red-500 mt-1">{error}</p>}
@@ -65,14 +73,14 @@ export default function FormField({
           <Select
             onValueChange={(val) => onChange(fieldKey, val)}
           >
-            <SelectTrigger className="h-12 w-full rounded-2xl border-slate-300 bg-white text-base">
+            <SelectTrigger className="h-12 py-6 w-full rounded-2xl border-slate-300 bg-white text-base">
               <SelectValue placeholder="Select cement type" />
             </SelectTrigger>
 
-            <SelectContent>
-              <SelectItem value="PPC">PPC</SelectItem>
-              <SelectItem value="PCC">PCC</SelectItem>
-              <SelectItem value="White Cement">White Cement</SelectItem>
+            <SelectContent className="rounded-2xl p-2">
+              <SelectItem className="py-2" value="PPC">PPC</SelectItem>
+              <SelectItem className="py-2" value="PCC">PCC</SelectItem>
+              <SelectItem className="py-2" value="White Cement">White Cement</SelectItem>
             </SelectContent>
           </Select>
 
