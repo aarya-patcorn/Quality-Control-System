@@ -66,7 +66,7 @@ export const TESTS = {
                 title: "Review",
                 fields: [
                     { label: "Test Done By", name: "test_done_by", type: "text", disabled: true },
-                    { label: "Remarks (if any)", name: "remarks_if_any", type: "textarea", full: true, required: false },
+                    { label: "Remarks (if any)", name: "remarks_if_any", type: "textarea", full: true },
                     { label: "Status", name: "status", type: "status", full: true, required: false },
                 ],
             },
@@ -145,7 +145,7 @@ export const TESTS = {
             {
                 title: "Batch Info",
                 fields: [
-                    { label: "Manufacturing Date", name: "manufacturing_date", type: "date"},
+                    { label: "Manufacturing Date", name: "manufacturing_date", type: "date" },
                     { label: "Batch No", name: "batch_no", type: "number" },
                     { label: "Adhesive Type", name: "adhesive_type", type: "text" },
                 ],

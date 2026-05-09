@@ -4,7 +4,6 @@ import Login from './authPage/Login'
 import { Toaster } from 'react-hot-toast'
 import PublicRoutes from './authPage/PublicRoutes'
 import PrivateRoutes from './authPage/PrivateRoutes'
-import ScrollToTop from "./hooks/ScrollToTop"
 
 function App() {
   return (
@@ -44,7 +43,6 @@ function App() {
         }}
       />
       <BrowserRouter>
-      <ScrollToTop />
         <Routes>
           <Route
             path='/login'
