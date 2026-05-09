@@ -82,6 +82,15 @@ export const validateForm = ({
           isValid = false;
         }
       }
+
+      if (field.type === "cement_type" && value) {
+        const allowedCementTypes = ["PPC", "PCC", "White Cement"];
+
+        if (!allowedCementTypes.includes(value)) {
+          errors[key] = "Invalid cement type selected";
+          isValid = false;
+        }
+      }
     });
   });
 

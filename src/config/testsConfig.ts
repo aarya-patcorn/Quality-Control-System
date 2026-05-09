@@ -10,18 +10,18 @@ export const TESTS = {
                 fields: [
                     { label: "Cement Unloading Date", name: "cement_unloading_date", type: "date" },
                     { label: "Supplier Name", name: "supplier_name", type: "text" },
-                    { label: "Bill Invoice No.", name: "bill_invoice_no", type: "text" },
-                    { label: "Cement Type", name: "cement_type", type: "text" },
+                    { label: "Bill Invoice No.", name: "bill_invoice_no", type: "number" },
+                    { label: "Cement Type", name: "cement_type", type: "cement_type" },
                     { label: "Testing Date", name: "testing_date", type: "date" },
                 ],
             },
             {
                 title: "Test Results",
                 fields: [
-                    { label: "Initial Setting Time (mins)", name: "initial_setting_time_mins", type: "text" },
-                    { label: "Workability / Flow (mm)", name: "workability_flow_mm", type: "text" },
-                    { label: "Image of Result (Workability)", name: "image_of_result_workability", type: "file" },
-                    { label: "Fineness (% retained on 90µm)", name: "fineness_retained_on_90_m", type: "text", full: true },
+                    { label: "Initial Setting Time (mins)", name: "initial_setting_time_mins", type: "number" },
+                    { label: "Workability / Flow (mm)", name: "workability_flow_mm", type: "number" },
+                    { label: "Image of Result (Workability)", name: "image_of_result_workability", type: "number" },
+                    { label: "Fineness (% retained on 90µm)", name: "fineness_retained_on_90_m", type: "number", full: true },
                 ],
             },
             {
@@ -44,21 +44,22 @@ export const TESTS = {
                 fields: [
                     { label: "Sand Unloading Date", name: "sand_unloading_date", type: "date" },
                     { label: "Supplier Name", name: "supplier_name", type: "text" },
-                    { label: "Bill/Invoice No.", name: "bill_invoice_no", type: "text" },
+                    { label: "Bill/Invoice No.", name: "bill_invoice_no", type: "number" },
                     { label: "Sand Type", name: "sand_type", type: "text" },
                     { label: "Testing Date", name: "testing_date", type: "date" },
-                    { label: "Sample No", name: "sample_no", type: "text" },
+                    { label: "Sample No", name: "sample_no", type: "number" },
                 ],
             },
             {
                 title: "Sieve Readings",
                 fields: [
-                    { label: "1mm (gm)", name: "1mm_gm", type: "text" },
-                    { label: "600 µm (gm)", name: "600_m_gm", type: "text" },
-                    { label: "300 µm (gm)", name: "300_m_gm", type: "text" },
-                    { label: "150 µm (gm)", name: "150_m_gm", type: "text" },
-                    { label: "90 µm (gm)", name: "90_m_gm", type: "text" },
-                    { label: "Weight in Pan (gm)", name: "weight_in_pan_gm", type: "text" },
+                    { label: "1mm (gm)", name: "1mm_gm", type: "number" },
+                    { label: "600 µm (gm)", name: "600_m_gm", type: "number" },
+                    { label: "300 µm (gm)", name: "300_m_gm", type: "number" },
+                    { label: "150 µm (gm)", name: "150_m_gm", type: "number" },
+                    { label: "90 µm (gm)", name: "90_m_gm", type: "number" },
+                    { label: "Weight in Pan (gm)", name: "weight_in_pan_gm", type: "number" },
+                    { label: "Moisture Percentage", name: "moisture_percentage", type: "number" },
                 ],
             },
             {
@@ -80,19 +81,19 @@ export const TESTS = {
                 title: "Batch Info",
                 fields: [
                     { label: "Testing Date", name: "testing_date", type: "date" },
-                    { label: "Batch No", name: "batch_no", type: "text" },
+                    { label: "Batch No", name: "batch_no", type: "number" },
                     { label: "Adhesive Type", name: "adhesive_type", type: "text", full: true },
                 ],
             },
             {
                 title: "Sieve Readings",
                 fields: [
-                    { label: "1mm (gm)", name: "1mm_gm", type: "text" },
-                    { label: "600 µm (gm)", name: "600_m_gm", type: "text" },
-                    { label: "300 µm (gm)", name: "300_m_gm", type: "text" },
-                    { label: "150 µm (gm)", name: "150_m_gm", type: "text" },
-                    { label: "90 µm (gm)", name: "90_m_gm", type: "text" },
-                    { label: "Weight in Pan (gm)", name: "weight_in_pan_gm", type: "text" },
+                    { label: "1mm (gm)", name: "1mm_gm", type: "number" },
+                    { label: "600 µm (gm)", name: "600_m_gm", type: "number" },
+                    { label: "300 µm (gm)", name: "300_m_gm", type: "number" },
+                    { label: "150 µm (gm)", name: "150_m_gm", type: "number" },
+                    { label: "90 µm (gm)", name: "90_m_gm", type: "number" },
+                    { label: "Weight in Pan (gm)", name: "weight_in_pan_gm", type: "number" },
                 ],
             },
             {
@@ -114,7 +115,7 @@ export const TESTS = {
                 title: "Batch Info",
                 fields: [
                     { label: "Manufacturing Date", name: "manufacturing_date", type: "date" },
-                    { label: "Batch No", name: "batch_no", type: "text" },
+                    { label: "Batch No", name: "batch_no", type: "number" },
                     { label: "Adhesive Type", name: "adhesive_type", type: "text" },
                 ],
             },
@@ -122,9 +123,8 @@ export const TESTS = {
                 title: "Inspection",
                 fields: [
                     { label: "Visual Analysis", name: "visual_analysis", type: "textarea", full: true },
-                    { label: "Visual Analysis File", name: "visual_analysis_file", type: "file" },
+                    { label: "Adhescive Visual Inspection & Luss", name: "visual_analysis_file", type: "file" },
                     { label: "Luss Formation / Stickiness", name: "luss_formation_stickiness", type: "text" },
-                    { label: "Luss Formation File", name: "luss_formation_file", type: "file", full: true },
                 ],
             },
             {

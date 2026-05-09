@@ -36,19 +36,18 @@ export default function FormField({
             value={value || ""}
             onChange={(e) => onChange(fieldKey, e.target.value)}
             placeholder={`Enter ${field.label.toLowerCase()}`}
-            className={`min-h-[100px] rounded-2xl p-4 text-base ${
-              error ? "border-red-500 bg-red-50" : "border-slate-300 bg-white"
-            }`}
+            className={`min-h-[100px] rounded-2xl p-4 text-base ${error ? "border-red-500 bg-red-50" : "border-slate-300 bg-white"
+              }`}
           />
           {error && <p className="text-xs text-red-500 mt-1">{error}</p>}
-        </> 
+        </>
       )}
 
       {/* STATUS */}
       {field.type === "status" && (
         <>
           <Select onValueChange={(val) => onChange(fieldKey, val)}>
-            <SelectTrigger className="h-12 rounded-2xl border-slate-300 bg-white text-base">
+            <SelectTrigger className="h-12 w-full rounded-2xl border-slate-300 bg-white text-base">
               <SelectValue placeholder="Select status" />
             </SelectTrigger>
             <SelectContent>
@@ -61,6 +60,25 @@ export default function FormField({
         </>
       )}
 
+      {field.type === "cement_type" && (
+        <>
+          <Select
+            onValueChange={(val) => onChange(fieldKey, val)}
+          >
+            <SelectTrigger className="h-12 w-full rounded-2xl border-slate-300 bg-white text-base">
+              <SelectValue placeholder="Select cement type" />
+            </SelectTrigger>
+
+            <SelectContent>
+              <SelectItem value="PPC">PPC</SelectItem>
+              <SelectItem value="PCC">PCC</SelectItem>
+              <SelectItem value="White Cement">White Cement</SelectItem>
+            </SelectContent>
+          </Select>
+
+          {error && <p className="mt-1 text-xs text-red-500">{error}</p>}
+        </>
+      )}
       {/* FILE */}
       {field.type === "file" && (
         <>
@@ -76,7 +94,7 @@ export default function FormField({
       )}
 
       {/* INPUT */}
-      {!["textarea", "status", "file"].includes(field.type) && (
+      {!["textarea", "status", "file", "cement_type"].includes(field.type) && (
         <>
           <Input
             type={field.type}
@@ -84,9 +102,8 @@ export default function FormField({
             disabled={field.disabled}
             onChange={(e) => onChange(fieldKey, e.target.value)}
             placeholder={`Enter ${field.label.toLowerCase()}`}
-            className={`h-12 rounded-2xl px-4 text-base ${
-              error ? "border-red-500 bg-red-50" : "border-slate-300 bg-white"
-            }`}
+            className={`h-12 rounded-2xl px-4 text-base ${error ? "border-red-500 bg-red-50" : "border-slate-300 bg-white"
+              }`}
           />
           {error && <p className="text-xs text-red-500 mt-1">{error}</p>}
         </>

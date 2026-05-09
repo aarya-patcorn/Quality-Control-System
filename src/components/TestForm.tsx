@@ -6,6 +6,7 @@ import {
   ChevronDown,
   ChevronUp,
   CheckCircle2,
+  ArrowLeft,
 } from "lucide-react";
 
 import { TESTS } from "../config/testsConfig"; // (move TESTS here later)
@@ -14,7 +15,7 @@ import toast from "react-hot-toast";
 import { validateForm } from "../utils/validateForm";
 import { preparePayload } from "../utils/fileUtils";
 
-const API_URL = "https://script.google.com/macros/s/AKfycbyHREcyipyXfTISgUVXvRhG_eqpRY_YUrkqVTN7PfuaqHwZjIvL-51O2adxRoRBsDq1/exec"
+const API_URL = "https://script.google.com/macros/s/AKfycbwCFxRg8ILnxMyU8biGU8Ar_1ojgJ5aFJ5rjR7xp8W5h42BW1Ma14yLswG5FTkRAvk-8Q/exec"
 
 export default function TestForm() {
   const [testType, setTestType] = useState("");
@@ -64,7 +65,6 @@ export default function TestForm() {
         return;
       }
 
-      // ❌ field errors
       if (!isValid) {
         setErrors(errors);
         toast.error("Please fix validation errors");
@@ -100,6 +100,9 @@ export default function TestForm() {
         setTestType("");
         setExpandedSections({});
         setErrors({});
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
       } else {
         throw new Error(result.error || "Something went wrong");
       }
@@ -140,8 +143,23 @@ export default function TestForm() {
         {testType && selectedTest && (
           <div className="space-y-4">
             {/* HEADER CARD */}
-            <div className="rounded-2xl bg-slate-900 p-5 text-white">
-              <h2 className="text-xl font-bold">{selectedTest.label}</h2>
+            <div className="flex items-center justify-between rounded-2xl bg-slate-900 p-5 text-white">
+              <div>
+                <h2 className="text-xl font-bold">{selectedTest.label}</h2>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setTestType("");
+                  setExpandedSections({});
+                  setErrors({});
+                }}
+                className="flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur transition hover:bg-white/20"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                Back
+              </button>
             </div>
 
             {/* SECTIONS */}
@@ -176,12 +194,28 @@ export default function TestForm() {
               );
             })}
 
-            {/* SUBMIT */}
-            <div className="pt-2">
+            <div className="grid grid-cols-2 gap-3 pt-2">
+              {/* CANCEL */}
+              <Button
+                type="button"
+                variant="outline"
+                disabled={loading}
+                onClick={() => {
+                  setTestType("");
+                  setExpandedSections({});
+                  setErrors({});
+                  setFormData({});
+                }}
+                className="h-14 rounded-2xl border-slate-300 text-base font-semibold"
+              >
+                Cancel
+              </Button>
+
+              {/* SUBMIT */}
               <Button
                 onClick={handleSubmit}
                 disabled={loading}
-                className="h-14 w-full rounded-2xl text-base font-semibold shadow-lg"
+                className="h-14 rounded-2xl text-base font-semibold shadow-lg"
               >
                 <span className="flex items-center justify-center gap-2">
                   {loading ? (
@@ -189,7 +223,7 @@ export default function TestForm() {
                   ) : (
                     <>
                       <CheckCircle2 className="h-5 w-5" />
-                      Submit Test Record
+                      Submit Record
                     </>
                   )}
                 </span>
