@@ -66,7 +66,7 @@ export const TESTS = {
                 title: "Review",
                 fields: [
                     { label: "Test Done By", name: "test_done_by", type: "text", disabled: true },
-                    { label: "Remarks (if any)", name: "remarks_if_any", type: "textarea", full: true },
+                    { label: "Remarks (if any)", name: "remarks_if_any", type: "textarea", full: true, required: false },
                     { label: "Status", name: "status", type: "status", full: true, required: false },
                 ],
             },
@@ -145,17 +145,17 @@ export const TESTS = {
             {
                 title: "Batch Info",
                 fields: [
-                    { label: "Manufacturing Date", name: "manufacturing_date", type: "date", disabled: true },
-                    { label: "Batch No", name: "batch_no", type: "text" },
+                    { label: "Manufacturing Date", name: "manufacturing_date", type: "date"},
+                    { label: "Batch No", name: "batch_no", type: "number" },
                     { label: "Adhesive Type", name: "adhesive_type", type: "text" },
                 ],
             },
             {
                 title: "Performance",
                 fields: [
-                    { label: "Initial Setting Time", name: "initial_setting_time", type: "text" },
+                    { label: "Initial Setting Time", name: "initial_setting_time", type: "number" },
                     { label: "Initial Setting File", name: "initial_setting_file", type: "file" },
-                    { label: "Flow Test (mm)", name: "flow_test_mm", type: "text" },
+                    { label: "Flow Test (mm)", name: "flow_test_mm", type: "number" },
                     { label: "Flow Test File", name: "flow_test_file", type: "file" },
                 ],
             },
@@ -177,10 +177,10 @@ export const TESTS = {
             {
                 title: "Sample Info",
                 fields: [
-                    { label: "Batch No", name: "batch_no", type: "text" },
+                    { label: "Batch No", name: "batch_no", type: "number" },
                     { label: "Manufacturing Date", name: "manufacturing_date", type: "date" },
                     { label: "Testing Date", name: "testing_date", type: "date" },
-                    { label: "Sample No", name: "sample_no", type: "text" },
+                    { label: "Sample No", name: "sample_no", type: "number" },
                     { label: "Adhesive Type", name: "adhesive_type", type: "text" },
                     { label: "Adhesive Color", name: "adhesive_color", type: "text" },
                 ],
@@ -188,11 +188,11 @@ export const TESTS = {
             {
                 title: "Environment & Performance",
                 fields: [
-                    { label: "Temp (°C)", name: "temp_c", type: "text" },
-                    { label: "Humidity (%)", name: "humidity", type: "text" },
-                    { label: "Slip Resistance", name: "slip_resistance", type: "text" },
-                    { label: "Open Time", name: "open_time", type: "text" },
-                    { label: "Adjustment Time", name: "adjustment_time", type: "text", full: true },
+                    { label: "Temp (°C)", name: "temp_c", type: "number" },
+                    { label: "Humidity (%)", name: "humidity", type: "number" },
+                    { label: "Slip Resistance", name: "slip_resistance", type: "number" },
+                    { label: "Open Time", name: "open_time", type: "number" },
+                    { label: "Adjustment Time", name: "adjustment_time", type: "number", full: true },
                 ],
             },
             {
