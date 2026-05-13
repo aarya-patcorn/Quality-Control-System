@@ -115,7 +115,7 @@ export const TESTS = {
                 title: "Batch Info",
                 fields: [
                     { label: "Manufacturing Date", name: "manufacturing_date", type: "date" },
-                    { label: "Batch No", name: "batch_no", type: "number" },
+                    { label: "Batch No", name: "batch_no", type: "text" },
                     { label: "Adhesive Type", name: "adhesive_type", type: "text" },
                 ],
             },
