@@ -122,9 +122,8 @@ export const TESTS = {
             {
                 title: "Inspection",
                 fields: [
-                    { label: "Visual Analysis", name: "visual_analysis", type: "textarea", full: true },
-                    { label: "Adhescive Visual Inspection & Luss", name: "visual_analysis_file", type: "file" },
                     { label: "Luss Formation / Stickiness", name: "luss_formation_stickiness", type: "text" },
+                    { label: "Adhescive Visual Inspection & Luss", name: "visual_analysis_file", type: "file" },
                 ],
             },
             {
