@@ -10,7 +10,7 @@ export const TESTS = {
                 fields: [
                     { label: "Cement Unloading Date", name: "cement_unloading_date", type: "date" },
                     { label: "Supplier Name", name: "supplier_name", type: "text" },
-                    { label: "Bill Invoice No.", name: "bill_invoice_no", type: "number" },
+                    { label: "Bill Invoice No.", name: "bill_invoice_no", type: "text" },
                     { label: "Cement Type", name: "cement_type", type: "cement_type" },
                     { label: "Testing Date", name: "testing_date", type: "date" },
                 ],
@@ -44,7 +44,7 @@ export const TESTS = {
                 fields: [
                     { label: "Sand Unloading Date", name: "sand_unloading_date", type: "date" },
                     { label: "Supplier Name", name: "supplier_name", type: "text" },
-                    { label: "Bill/Invoice No.", name: "bill_invoice_no", type: "number" },
+                    { label: "Bill/Invoice No.", name: "bill_invoice_no", type: "text" },
                     { label: "Sand Type", name: "sand_type", type: "select", options: ["White", "Grey"] },
                     { label: "Sand Size", name: "sand_size", type: "select", options: ["600", "1200"] },
                     { label: "Testing Date", name: "testing_date", type: "date" },
