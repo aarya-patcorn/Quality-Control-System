@@ -46,7 +46,7 @@ export default function FormField({
       {/* STATUS */}
       {field.type === "status" && (
         <>
-          <Select onValueChange={(val) => onChange(fieldKey, val)}>
+          <Select value={value || ""} onValueChange={(val) => onChange(fieldKey, val)}>
             <SelectTrigger className="h-12 py-6 w-full rounded-2xl border-slate-300 bg-white text-base">
               <SelectValue placeholder="Select status" />
             </SelectTrigger>
@@ -71,6 +71,7 @@ export default function FormField({
       {field.type === "cement_type" && (
         <>
           <Select
+            value={value || ""}
             onValueChange={(val) => onChange(fieldKey, val)}
           >
             <SelectTrigger className="h-12 py-6 w-full rounded-2xl border-slate-300 bg-white text-base">
@@ -84,6 +85,25 @@ export default function FormField({
             </SelectContent>
           </Select>
 
+          {error && <p className="mt-1 text-xs text-red-500">{error}</p>}
+        </>
+      )}
+
+      {field.type === "select" && (
+        <>
+          <Select value={value || ""} onValueChange={(val) => onChange(fieldKey, val)}>
+            <SelectTrigger className="h-12 py-6 w-full rounded-2xl border-slate-300 bg-white text-base">
+              <SelectValue placeholder={`Select ${field.label.toLowerCase()}`} />
+            </SelectTrigger>
+
+            <SelectContent className="rounded-2xl p-2">
+              {(field.options || []).map((option: string) => (
+                <SelectItem key={option} className="py-2" value={option}>
+                  {option}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
           {error && <p className="mt-1 text-xs text-red-500">{error}</p>}
         </>
       )}
@@ -102,7 +122,7 @@ export default function FormField({
       )}
 
       {/* INPUT */}
-      {!["textarea", "status", "file", "cement_type"].includes(field.type) && (
+      {!["textarea", "status", "file", "cement_type", "select"].includes(field.type) && (
         <>
           <Input
             type={field.type}
