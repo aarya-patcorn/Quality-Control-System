@@ -119,7 +119,7 @@ export const TESTS = {
                     { label: "Manufacturing Date", name: "manufacturing_date", type: "date" },
                     { label: "Batch No", name: "batch_no", type: "text" },
                     { label: "Adhesive Type", name: "adhesive_type", type: "select", options: ["k50", "k60", "k80", "k90", "kamdhenuX"] },
-                    { label: "Bag Size", name: "bag_size", type: "select", options: ["20kg", "50 kg"] },
+                    { label: "Bag Size", name: "bag_sizes", type: "select", options: ["20kg", "50 kg"] },
                 ],
             },
             {
