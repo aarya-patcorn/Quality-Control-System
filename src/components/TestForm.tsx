@@ -80,6 +80,8 @@ export default function TestForm() {
         data: cleanData,
       };
 
+      console.log("Submitting payload:", payload);
+
       console.log(payload)
 
       const res = await fetch(API_URL, {

@@ -55,11 +55,11 @@ export default function FormField({
                 Pass
               </SelectItem>
 
-              <SelectItem className="py-2" value="Doubtful">
+              <SelectItem className="py-2" value="doubtful">
                 Doubtful
               </SelectItem>
 
-              <SelectItem className="py-2" value="Fail">
+              <SelectItem className="py-2" value="fail">
                 Fail
               </SelectItem>
             </SelectContent>
